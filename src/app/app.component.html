@@ -1,5 +1,46 @@
-<ul>
-  <li *ngFor="let user of users">
-    {{ user }}
-  </li>
+<!-- <ul>
+
+    <app-usuario *ngFor="let user of users" [nombreUsuario]="user"></app-usuario>
+
 </ul>
+<br>
+<ul>
+    <li *ngIf="activated">
+        activado
+    </li>
+</ul> -->
+
+<!-- <div>
+    <p>Nombre: {{nombre}}</p>
+    <p>Direccion: {{ direccion.calle }} </p>
+    <p>Ciudad: {{ direccion.ciudad }} </p>
+    Hobbies:
+    <ul>
+        <li *ngFor="let hobby of hobbies">
+            {{ hobby }}
+        </li>
+    </ul>
+</div> -->
+
+<form (submit)="AgregarUsuario(NuevoUser)">
+    <input type="text" #NuevoUser>
+    <button>
+        Agreagr Usuario
+    </button>
+</form>
+
+<ul>
+    <li *ngFor="let usu of usuarios">
+        {{usu}} <button (click)="EliminarUsuario(usu)">Eliminar</button>
+    </li>
+</ul>
+
+<div>
+
+    <form>
+        <input type="text" name="nombre">
+        <input type="text" name="edad">
+    </form>
+
+    Nombre: {{ nombre }} <br> Edad: {{ edad }}
+</div>
