@@ -1,4 +1,5 @@
 import { Component, NgModule } from '@angular/core';
+import { DatosService } from './datos.service';
 
 @Component({
   selector: 'app',
@@ -26,7 +27,11 @@ export class AppComponent {
   nombre:string = 'Alexis Murillo';
   edad:number = 20; 
 
-  usuarios: string[]=['Alexis', 'Isa', 'Chabela'];
+  usuarios:string[]=['Alexis', 'Isa', 'Chabela'];
+
+  constructor(private dataservice:DatosService){
+    this.dataservice.ObtenerDatos();
+  }
 
   decirHola() {
     alert('Hola gono');
@@ -46,4 +51,6 @@ export class AppComponent {
       }
     }
   }
+
+  publicaciones = [];
 }
